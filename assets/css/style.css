@@ -317,8 +317,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;     /* ← taille medium */
-    height: 100px;    /* ← taille medium */
+    width: 150px;     /* ← taille medium */
+    height: 150px;    /* ← taille medium */
 }
 
 /* The picture inside */
