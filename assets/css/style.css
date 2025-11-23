@@ -307,16 +307,15 @@ body {
 
 /* We'll reuse the same gradient style but larger for About */
 .profile-gradient-about {
-    width: 1000px;
-    height: 1000px;
-    
+    width: 380px;
+    height: 380px;
 }
 
-/* .profile-gradient-about {
-    width: 100%;
-    height: 100%;
+.profile-gradient-about {
+    width: 1000px;
+    height: 1000px;
     object-fit: cover;
-} */
+}
 
 
 /* Right side */
