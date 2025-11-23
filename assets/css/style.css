@@ -317,14 +317,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;     /* ← taille medium */
-    height: 200px;    /* ← taille medium */
+    width: 210px;     /* ← taille medium */
+    height: 210px;    /* ← taille medium */
 }
 
 /* The picture inside */
 .about-photo-circle img {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     border-radius: 50%;
     object-fit: cover;
 }
