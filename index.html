@@ -19,28 +19,51 @@
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <!-- ================= HEADER / NAVBAR ================= -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <div class="logo">Your<span>Portfolio</span></div>
+    <!-- ================= SIDEBAR (LEFT) ================= -->
+    <aside class="sidebar">
+        <div class="sidebar-inner">
+            <!-- Profile block -->
+            <div class="sidebar-profile">
+                <div class="profile-gradient">
+                    <img src="assets/img/profile.jpg" alt="Profile photo" />
+                </div>
+                <h1 class="sidebar-name">Your Name</h1>
+                <p class="sidebar-role">Data Analyst</p>
 
-            <nav class="nav" id="mainNav">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About Me</a>
-                <a href="#skills" class="nav-link">Technical Skills</a>
-                <a href="#experience" class="nav-link">Work Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <div class="sidebar-socials">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:you@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+
+                <a href="#" class="btn btn-primary sidebar-cv-btn">
+                    <i class="fas fa-download"></i>&nbsp; Download CV
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav" id="mainNav">
+                <a href="#home" class="nav-link active"><i class="fas fa-house"></i><span>Home</span></a>
+                <a href="#about" class="nav-link"><i class="fas fa-user"></i><span>About Me</span></a>
+                <a href="#skills" class="nav-link"><i class="fas fa-code"></i><span>Technical Skills</span></a>
+                <a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i><span>Work Experience</span></a>
+                <a href="#projects" class="nav-link"><i class="fas fa-folder-open"></i><span>Projects</span></a>
+                <a href="#contact" class="nav-link"><i class="fas fa-paper-plane"></i><span>Contact</span></a>
             </nav>
 
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
+            <footer class="sidebar-footer">
+                <small>© <span id="year"></span> Your Name</small>
+            </footer>
         </div>
-    </header>
 
-    <!-- ================= MAIN ================= -->
-    <main>
+        <!-- Mobile toggle button -->
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+    </aside>
+
+    <!-- ================= MAIN CONTENT (RIGHT) ================= -->
+    <main class="main">
         <!-- ===== HOME / HERO ===== -->
         <section id="home" class="section hero">
             <div class="hero-bg"></div>
@@ -76,9 +99,9 @@
                 <div class="section-underline"></div>
 
                 <div class="about-grid">
-                    <!-- Left: Picture -->
+                    <!-- Left: Picture (using same gradient style, bigger) -->
                     <div class="about-photo-wrapper">
-                        <div class="about-photo-circle">
+                        <div class="profile-gradient profile-gradient-about">
                             <img src="assets/img/profile.jpg" alt="Profile photo" />
                         </div>
                     </div>
@@ -129,7 +152,6 @@
                     <!-- Skill row 1 -->
                     <div class="skill-row">
                         <div class="skill-icon">
-                            <!-- Optional: <img src="assets/img/powerbi.png" alt="Power BI" /> -->
                             <span class="skill-icon-placeholder">PB</span>
                         </div>
                         <div class="skill-text">
@@ -202,8 +224,6 @@
                                     </ul>
                                 </div>
                             </div>
-
-                            <!-- Add more experience items if you want -->
                         </div>
                     </div>
 
@@ -356,7 +376,7 @@
                     </div>
 
                     <!-- Right: form -->
-                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Static demo – connect this form to Formspree or EmailJS.');">
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Static demo – connect this form to a service.');">
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Your Name</label>

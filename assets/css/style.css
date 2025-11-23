@@ -23,62 +23,146 @@ body {
     margin: 0 auto;
 }
 
-/* ========== HEADER / NAV ========== */
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: #ffffff;
-    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+/* ========== SIDEBAR (LEFT) ========== */
+.sidebar {
+    position: fixed;
+    inset-block: 0;
+    left: 0;
+    width: 260px;
+    background: #0f172a;
+    color: #e5e7eb;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 20px rgba(15, 23, 42, 0.6);
 }
 
-.header-inner {
+.sidebar-inner {
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Profile block in sidebar */
+.sidebar-profile {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.sidebar-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 12px;
+    color: #f9fafb;
+}
+
+.sidebar-role {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 10px;
+}
+
+/* Socials in sidebar */
+.sidebar-socials {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.sidebar-socials a {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: #1f2937;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 64px;
-}
-
-.logo {
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #0f172a;
-}
-
-.logo span {
-    color: #0b6efd;
-}
-
-.nav {
-    display: flex;
-    gap: 18px;
-}
-
-.nav-link {
-    font-size: 0.9rem;
+    justify-content: center;
+    color: #e5e7eb;
+    font-size: 0.8rem;
     text-decoration: none;
-    color: #4b5563;
-    padding: 6px 10px;
+}
+
+.sidebar-socials a:hover {
+    background: #0b6efd;
+}
+
+/* Sidebar CV button */
+.sidebar-cv-btn {
+    width: 100%;
+    font-size: 0.85rem;
+    padding-inline: 10px;
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+    margin-top: 12px;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
     border-radius: 999px;
-    transition: background 0.2s ease, color 0.2s ease;
+    font-size: 0.85rem;
+    color: #e5e7eb;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
-.nav-link:hover {
-    background: #e5f0ff;
-    color: #0b6efd;
+.sidebar-nav .nav-link i {
+    font-size: 0.9rem;
 }
 
-.nav-link.active {
+.sidebar-nav .nav-link span {
+    white-space: nowrap;
+}
+
+.sidebar-nav .nav-link:hover {
+    background: #111827;
+    transform: translateX(2px);
+}
+
+.sidebar-nav .nav-link.active {
     background: #0b6efd;
     color: #ffffff;
 }
 
-.nav-toggle {
-    display: none;
+/* Sidebar footer */
+.sidebar-footer {
+    margin-top: 16px;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    text-align: center;
+}
+
+/* Sidebar toggle (for mobile) */
+.sidebar-toggle {
+    position: absolute;
+    top: 15px;
+    right: -46px;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
     border: none;
-    background: none;
-    color: #111827;
-    font-size: 1.2rem;
+    background: #0f172a;
+    color: #f9fafb;
+    display: none; /* hidden on desktop, shown on mobile */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.8);
+    cursor: pointer;
+}
+
+/* ========== MAIN (RIGHT) ========== */
+.main {
+    margin-left: 260px;
 }
 
 /* ========== SECTIONS GENERAL ========== */
@@ -221,24 +305,13 @@ body {
     justify-content: center;
 }
 
-.about-photo-circle {
+/* We'll reuse the same gradient style but larger for About */
+.profile-gradient-about {
     width: 280px;
     height: 280px;
-    border-radius: 999px;
-    background: #ffd73a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
 }
 
-.about-photo-circle img {
-    width: 78%;
-    height: 78%;
-    border-radius: 999px;
-    object-fit: cover;
-}
-
+/* Right side */
 .about-content {
     color: #1f2933;
 }
@@ -660,30 +733,51 @@ body {
     transform: translateY(-2px);
 }
 
+/* ========== PROFILE GRADIENT (used in sidebar + about) ========== */
+.profile-gradient {
+    width: 160px;
+    height: 160px;
+    padding: 6px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #4cb5ff,
+        #3ee4b5,
+        #8a5fff,
+        #4cb5ff
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin: 0 auto;
+}
+
+.profile-gradient img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #d9d9df; /* Soft warm grey inner background */
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 900px) {
-    .nav {
-        position: absolute;
-        inset-inline: 0;
-        top: 64px;
-        background: #ffffff;
-        border-bottom: 1px solid #e5e7eb;
-        flex-direction: column;
-        gap: 0;
-        padding: 10px 18px 12px;
-        display: none;
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        width: 230px;
     }
 
-    .nav.open {
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
         display: flex;
     }
 
-    .nav-link {
-        padding: 8px 10px;
-    }
-
-    .nav-toggle {
-        display: block;
+    .main {
+        margin-left: 0;
     }
 
     .about-grid,
@@ -693,13 +787,13 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .about-photo-circle {
-        width: 220px;
-        height: 220px;
-    }
-
     .projects-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .profile-gradient-about {
+        width: 220px;
+        height: 220px;
     }
 }
 

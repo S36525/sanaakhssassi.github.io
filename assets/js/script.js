@@ -1,22 +1,36 @@
-// ===== MOBILE NAV TOGGLE =====
-const navToggle = document.getElementById("navToggle");
-const nav = document.getElementById("mainNav");
+// ===== SIDEBAR TOGGLE (MOBILE) =====
+const sidebarToggle = document.getElementById("sidebarToggle");
+const sidebar = document.querySelector(".sidebar");
 
-if (navToggle && nav) {
-    navToggle.addEventListener("click", () => {
-        nav.classList.toggle("open");
-    });
-
-    // Close menu when a link is clicked (on mobile)
-    nav.querySelectorAll(".nav-link").forEach(link => {
-        link.addEventListener("click", () => nav.classList.remove("open"));
+if (sidebarToggle && sidebar) {
+    sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
     });
 }
 
-// ===== SMOOTH SCROLL + ACTIVE LINK =====
+// ===== ACTIVE NAV ON SCROLL =====
 const navLinks = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll("main section");
 
+function updateActiveNav() {
+    let currentId = "";
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) {
+            currentId = "#" + section.id;
+        }
+    });
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        link.classList.toggle("active", href === currentId);
+    });
+}
+
+window.addEventListener("scroll", updateActiveNav);
+updateActiveNav();
+
+// Smooth scroll for nav links
 navLinks.forEach(link => {
     link.addEventListener("click", e => {
         const href = link.getAttribute("href");
@@ -26,26 +40,11 @@ navLinks.forEach(link => {
             if (target) {
                 target.scrollIntoView({ behavior: "smooth" });
             }
+            // Close sidebar on mobile
+            sidebar?.classList.remove("open");
         }
     });
 });
-
-function updateActiveNav() {
-    let currentId = "";
-    sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 120 && rect.bottom >= 120) {
-            currentId = "#" + section.id;
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.toggle("active", link.getAttribute("href") === currentId);
-    });
-}
-
-window.addEventListener("scroll", updateActiveNav);
-updateActiveNav();
 
 // ===== SCROLL TO TOP BUTTON =====
 const scrollBtn = document.getElementById("scrollToTop");
@@ -102,24 +101,8 @@ if (typingSpan) {
     }
 }
 
-// ===== PROJECT FILTERS =====
-const filterButtons = document.querySelectorAll(".filter-btn");
-const projectCards = document.querySelectorAll(".project-card");
-
-filterButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const filter = btn.getAttribute("data-filter");
-
-        filterButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        projectCards.forEach(card => {
-            const category = card.getAttribute("data-category");
-            if (filter === "all" || filter === category) {
-                card.classList.remove("hidden");
-            } else {
-                card.classList.add("hidden");
-            }
-        });
-    });
-});
+// ===== YEAR IN FOOTER =====
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+}
