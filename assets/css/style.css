@@ -320,8 +320,8 @@ body {
 
 /* Taille de la photo = tu modifies SEULEMENT CETTE PARTIE */
 .about-photo-circle img {
-    width: 220px;       /* ← taille ici : small/medium/big */
-    height: 220px;
+    width: 23px;       /* ← taille ici : small/medium/big */
+    height: 230px;
     border-radius: 50%;
 }
 
