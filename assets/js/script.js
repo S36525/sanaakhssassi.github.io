@@ -1,85 +1,76 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize project filtering
-    initProjectFilter();
+    // Initialize smooth scrolling for navigation links
+    initSmoothScroll();
 
-    // Initialize scroll animations
-    initScrollAnimations();
+    // Initialize scroll-to-top button
+    initScrollToTop();
+
+    // Initialize active navigation item based on scroll
+    initActiveNav();
 });
 
-// Function to handle project filtering
-function initProjectFilter() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+// Function to handle smooth scrolling for navigation links
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            button.classList.add('active');
-
-            const filterValue = button.getAttribute('data-filter');
-
-            // Show/hide project cards based on filter
-            projectCards.forEach(card => {
-                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                    card.style.display = 'flex';
-                    // Trigger animation
-                    setTimeout(() => {
-                        card.classList.add('show');
-                    }, 10); // Small delay for smoother effect
-                } else {
-                    card.classList.remove('show');
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300); // Wait for animation to finish before hiding
-                }
-            });
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // Offset for sticky header
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 }
 
-// Function to handle scroll-based animations
-function initScrollAnimations() {
+// Function to handle scroll-to-top button
+function initScrollToTop() {
+    const scrollToTopButton = document.getElementById('scrollToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTopButton.style.opacity = '1';
+            scrollToTopButton.style.pointerEvents = 'auto';
+        } else {
+            scrollToTopButton.style.opacity = '0';
+            scrollToTopButton.style.pointerEvents = 'none';
+        }
+    });
+
+    scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Function to update active navigation item based on scroll position
+function initActiveNav() {
     const sections = document.querySelectorAll('.section');
-    const projectCards = document.querySelectorAll('.project-card');
+    const navLinks = document.querySelectorAll('.sidebar nav a');
 
-    // Observe sections for fade-in on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    window.addEventListener('scroll', () => {
+        let current = '';
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fade-in');
-                sectionObserver.unobserve(entry.target);
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100; // Adjust offset as needed
+            const sectionHeight = section.offsetHeight;
+
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
             }
         });
-    }, observerOptions);
 
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
-
-    // Observe project cards for staggered fade-in
-    const projectObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                // Add a small delay for each card to create a staggered effect
-                setTimeout(() => {
-                    entry.target.classList.add('show');
-                }, index * 100);
-                projectObserver.unobserve(entry.target);
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    });
-
-    projectCards.forEach(card => {
-        projectObserver.observe(card);
     });
 }

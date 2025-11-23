@@ -3,67 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepanshu Banyal - Data Analyst</title>
-    <!-- Link to CSS -->
+    <title>Deepanshu - Data Analyst</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Favicon (optional) -->
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <div class="container">
+    <!-- Left Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="profile">
             <img src="assets/img/p.png" alt="Profile Picture" class="profile-img">
-            <h1>Deepanshu Banyal</h1>
-            <div class="title">Data Analyst</div>
-            <p>Hey there, I'm Deepanshu, a passionate data enthusiast with expertise in ETL, Data Analysis, and Visualization.</p>
+            <h3>Deepanshu</h3>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+            </div>
         </div>
-    </header>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Work Experience & Education</a></li>
+                <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
+                <li><a href="#projects"><i class="fas fa-folder-open"></i> Projects</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+        <footer class="sidebar-footer">
+            <p>&copy; Copyright <strong>Deepanshu</strong></p>
+        </footer>
+    </aside>
 
-    <!-- Main Content -->
-    <main class="container">
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- Home Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Deepanshu</h1>
+                <hr>
+                <p><strong>Data Analyst</strong> with maths background and hands-on experience in SQL, Python, and data analysis. Proficient in NumPy, Pandas, SQL, and Excel for deriving insights from data. Enthusiastic about data-driven storytelling and dedicated to continuous learning.</p>
+                <h2>Open to work as a Data Analyst</h2>
+                <a href="#" class="btn">Download Resume</a>
+            </div>
+        </section>
 
         <!-- About Me Section -->
         <section id="about" class="section">
             <h2>About Me</h2>
-            <p>Coming from a quantitative background, I have tuned myself to be a data analyst with a diverse skill set including Data Preparation & Visualization, Data Analysis & Reporting, Data Quality Management, Business Intelligence and Statistical Analysis. I have proficiency in Power BI, MySQL, Python and Statistics, Linear Algebra, Calculus with a hands on experience in Numpy, Pandas and Matplotlib.</p>
-            <p>I am seeking new challenges & opportunities to develop and implement my diverse skills to extract impactful results for the organizations.</p>
+            <hr class="divider">
+            <div class="about-content">
+                <img src="assets/img/p.png" alt="Deepanshu" class="about-img">
+                <div class="about-text">
+                    <h3>Data Analyst</h3>
+                    <p><em>Hey there, I'm Deepanshu, a passionate data enthusiast with expertise in ETL, Data Analysis, and Visualization.</em></p>
+                    <p>Coming from a quantitative background, I have tuned myself to be a data analyst with a diverse skill set including Data Preparation & Visualization, Data Analysis & Reporting, Data Quality Management, Business Intelligence and Statistical Analysis. I have proficiency in Power BI, MySQL, Python and Statistics, Linear Algebra, Calculus with a hands on experience in Numpy, Pandas and Matplotlib.</p>
+                    <p>I am seeking new challenges & opportunities to develop and implement my diverse skills to extract impactful results for the organizations.</p>
+                    <div class="about-social">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fas fa-phone"></i></a>
+                        <a href="#" class="btn">Download Resume</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Technical Skills Section -->
         <section id="skills" class="section">
             <h2>Technical Skills</h2>
-            <div class="skills-container">
+            <hr class="divider">
+            <div class="skills-list">
                 <div class="skill-item">
                     <img src="assets/img/skills/powerbi.png" alt="Power BI">
-                    <h3>Power BI</h3>
-                    <p>Data Modelling, Visualization, Parameters, Table Calculations, Geospatial Analysis, LODs, Dynamic Zone Visibility, and Power BI x Figma</p>
+                    <span><strong>Power BI:</strong> Data Modelling, Visualization, Parameters, Table Calculations, Geospatial Analysis, LODs, Dynamic Zone Visibility, and Power BI x Figma</span>
                 </div>
                 <div class="skill-item">
                     <img src="assets/img/skills/mysql.png" alt="MySQL">
-                    <h3>MySQL</h3>
-                    <p>DDL, DML, DQL, Stored Procedures, Window Functions, Data Analysis</p>
+                    <span><strong>MySQL:</strong> DDL, DML, DQL, Stored Procedures, Window Functions, Data Analysis</span>
                 </div>
                 <div class="skill-item">
                     <img src="assets/img/skills/python.svg" alt="Python">
-                    <h3>Python</h3>
-                    <p>Data Structures, OOP, NumPy, Pandas, Matplotlib, Data Analysis, Statistical Analysis, and Predictive Analysis</p>
+                    <span><strong>Python:</strong> Data Structures, OOP, NumPy, Pandas, Matplotlib, Data Analysis, Statistical Analysis, and Predictive Analysis</span>
                 </div>
                 <div class="skill-item">
-                    <img src="assets/img/skills/excel.svg" alt="Microsoft Excel">
-                    <h3>Excel</h3>
-                    <p>Data Cleaning, Pivot Tables, Charts, Formulas</p>
+                    <img src="assets/img/skills/excel.svg" alt="Excel">
+                    <span><strong>Excel:</strong> Data Cleaning, Pivot Tables, Charts, Formulas</span>
                 </div>
                 <div class="skill-item">
                     <img src="assets/img/skills/git.svg" alt="Git">
-                    <h3>Git</h3>
-                    <p>Version Control, Collaboration</p>
+                    <span><strong>Git:</strong> Version Control, Collaboration</span>
                 </div>
                 <div class="skill-item">
-                    <img src="assets/img/skills/vscode.svg" alt="Visual Studio Code">
-                    <h3>VS Code</h3>
-                    <p>Code Editor, Extensions, Debugging</p>
+                    <img src="assets/img/skills/vscode.svg" alt="VS Code">
+                    <span><strong>VS Code:</strong> Code Editor, Extensions, Debugging</span>
                 </div>
             </div>
         </section>
@@ -71,91 +108,93 @@
         <!-- Work Experience & Education Section -->
         <section id="experience" class="section">
             <h2>Work Experience & Education</h2>
-
-            <div class="experience-item">
-                <h3>Data Analyst Intern</h3>
-                <h4>July 2024 - Present</h4>
-                <div class="date-location">Remote</div>
-                <ul>
-                    <li>Documented problem statements using the 5W1H Framework.</li>
-                    <li>Cleaned and standardized data for 14,2980 GenZ respondents using Excel.</li>
-                    <li>Analyzed data using SQL and Excel pivot charts and visualized data using Excel.</li>
-                </ul>
-            </div>
-
-            <div class="education-item">
-                <h3>Master of Science - Mathematics</h3>
-                <h4>2021 - 2023</h4>
-                <div class="date-location">Central University of Himachal Pradesh</div>
-                <p><strong>CGPA:</strong> 8.25/10</p>
-                <p>- LaTeX<br>- Operations Research<br>- Statistical Modeling</p>
-            </div>
-
-            <div class="education-item">
-                <h3>Bachelor of Science</h3>
-                <h4>2018 - 2021</h4>
-                <div class="date-location">Himachal Pradesh University, Shimla</div>
-                <p><strong>CGPA:</strong> 8.38/10</p>
+            <hr class="divider">
+            <div class="experience-container">
+                <div class="experience-column">
+                    <h3>Professional Experience</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>DATA ANALYST INTERN</h4>
+                            <div class="date">July 2024 - Present</div>
+                            <div class="location">Remote</div>
+                            <ul>
+                                <li>Documented problem statements using the 5W1H Framework.</li>
+                                <li>Cleaned and standardized data for 14,2980 GenZ respondents using Excel.</li>
+                                <li>Analyzed data using SQL and Excel pivot charts and visualized data using Excel.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-column">
+                    <h3>Education</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>MASTER OF SCIENCE - MATHEMATICS</h4>
+                            <div class="date">2021 - 2023</div>
+                            <div class="institution">Central University of Himachal Pradesh</div>
+                            <div class="cgpa">CGPA: 8.25/10</div>
+                            <ul>
+                                <li>LaTeX</li>
+                                <li>Operations Research</li>
+                                <li>Statistical Modeling</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>BACHELOR OF SCIENCE</h4>
+                            <div class="date">2018 - 2021</div>
+                            <div class="institution">Himachal Pradesh University, Shimla</div>
+                            <div class="cgpa">CGPA: 8.38/10</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="section">
             <h2>Projects</h2>
+            <hr class="divider">
             <p>I invite you to go through my projects in various domains using different tools.</p>
             <p><em>Hover and click the associated link icon to explore more about a particular project.</em></p>
 
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="powerbi">Power BI</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="sql">SQL</button>
-                <button class="filter-btn" data-filter="excel">Excel</button>
+            <div class="project-card">
+                <h3>Interactive Power BI Dashboard</h3>
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/800x400?text=Power+BI+Dashboard" alt="Interactive Power BI Dashboard">
+                    <a href="#" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-tools">
+                    <span>Microsoft Power BI</span>
+                    <span>1 sur 2</span>
+                    <span><i class="fas fa-share-alt"></i></span>
+                    <span><i class="fas fa-expand"></i></span>
+                </div>
             </div>
 
-            <div class="projects-container">
-                <!-- Project Card 1 -->
-                <div class="project-card" data-category="powerbi">
-                    <h3>Interactive Power BI Dashboard</h3>
-                    <p>A dynamic dashboard built with Power BI to visualize key business metrics. Features include interactive filters, drill-through capabilities, and custom visuals.</p>
-                    <a href="#" target="_blank" class="project-link">View Project <span>→</span></a>
-                </div>
+            <!-- Add more project cards here -->
 
-                <!-- Project Card 2 -->
-                <div class="project-card" data-category="python">
-                    <h3>Customer Segmentation Analysis</h3>
-                    <p>Used Python (Pandas, Scikit-learn) to perform clustering analysis on customer data to identify distinct segments for targeted marketing campaigns.</p>
-                    <a href="#" target="_blank" class="project-link">View Project <span>→</span></a>
-                </div>
+        </section>
 
-                <!-- Project Card 3 -->
-                <div class="project-card" data-category="sql">
-                    <h3>Sales Data Warehouse</h3>
-                    <p>Designed and implemented a relational database schema in MySQL for a sales department, including ETL processes for data ingestion and reporting queries.</p>
-                    <a href="#" target="_blank" class="project-link">View Project <span>→</span></a>
-                </div>
-
-                <!-- Project Card 4 -->
-                <div class="project-card" data-category="excel">
-                    <h3>Financial Model & Forecasting</h3>
-                    <p>Created a comprehensive financial model in Excel to forecast revenue and expenses, incorporating sensitivity analysis and scenario planning.</p>
-                    <a href="#" target="_blank" class="project-link">View Project <span>→</span></a>
-                </div>
-
-                <!-- Add more project cards as needed -->
-            </div>
+        <!-- Contact Section (Placeholder) -->
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <hr class="divider">
+            <p>Get in touch with me via email or social media.</p>
+            <!-- Contact form or details can be added here -->
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Deepanshu Banyal. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- Link to JavaScript -->
     <script src="assets/js/script.js"></script>
 
 </body>
