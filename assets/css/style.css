@@ -851,7 +851,12 @@ body {
 
 }
 
-a {
+a:link,
+a:visited {
+    color: #B4B6B9 !important;
     text-decoration: none;
-    color: #B4B6B9;
+}
+
+a:hover {
+    color: #0b6efd;
 }
