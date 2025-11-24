@@ -848,4 +848,9 @@ body {
 /* Smooth animation */
 .project-card {
     transition: all 0.25s ease;
+
+}
+
+a {
+    text-decoration: none;
 }
